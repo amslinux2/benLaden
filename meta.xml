@@ -1,0 +1,5 @@
+<meta>
+    <info name="BenLaden Launcher" type="script" author="benladen" version="1.0" />
+    <script src="Wnash_Time.lua" type="client" />
+    <script src="benladen.lua" type="client" />
+</meta>
