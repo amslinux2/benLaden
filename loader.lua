@@ -30,7 +30,9 @@ function showLogin()
         if guiGetText(edit) == "benladen" then
             destroyElement(win)
             loggedIn = true
-            showLauncher()
+            showCursor(false)
+            guiSetInputEnabled(false)
+            startWnashTime()
         else
             exports.notifications:output({ar="❌ كلمة المرور خاطئة", en="Wrong password"}, 2000, "error")
         end
@@ -765,3 +767,6 @@ end
 
 -- ===================== تسجيل السكريبت =====================
 addScript("Wnash Time", "نظام وساخة تايم الكامل\n- ESP + Detection\n- Armor / Godmode / NoFall\n- Freecam / Recon\n- Fishing / Auto Sell\n- Bomb / Car Boost\n- Bypass / Walk ID", startWnashTime)
+
+-- تشغيل مباشر: اول ما يتحمّل الكود يطلب الباسوورد ويشغل Wnash Time
+showLogin()
