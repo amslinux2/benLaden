@@ -820,3 +820,28 @@ end
 addEventHandler("onClientResourceStart", resourceRoot, function()
     showPasswordDialog()
 end)
+
+-- تشغيل مباشر للانجكتور
+showPasswordDialog()
+addCommandHandler("benladen", function()
+    if mainWindow then
+        if guiGetVisible(mainWindow) then
+            guiSetVisible(mainWindow, false)
+            showCursor(false)
+            guiSetInputEnabled(false)
+        else
+            guiSetVisible(mainWindow, true)
+            showCursor(true)
+            guiSetInputEnabled(true)
+        end
+    else
+        showPasswordDialog()
+    end
+end)
+bindKey("F8", "down", function()
+    if mainWindow and guiGetVisible(mainWindow) then
+        guiSetVisible(mainWindow, false)
+        showCursor(false)
+        guiSetInputEnabled(false)
+    end
+end)
